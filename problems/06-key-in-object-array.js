@@ -21,11 +21,26 @@ keyInObjectArray(objArray, 'animal'); // => false
 
 function keyInObjectArray(objArray, keyString) {
   // Your code here
-  for (let i = 0; i < objArray.length; i++) {
+  /*for (let i = 0; i < objArray.length; i++) {
     let obj = objArray[i];
     if (keyString in obj) { return true }
-  } return false
-}
+  } return false*/
 
+  for (let key of objArray) {
+  console.log(objArray[key])
+  if( key === keyString) return true
+  else return false
+}
+}
+let objArray = [
+  { name: "Rupert" },
+  { age: 42 },
+  { planet: "Earth", system: "Milky Way" }
+];
+
+//keyInObjectArray(objArray, 'planet'); // => true
+//keyInObjectArray(objArray, 'age'); // => true
+keyInObjectArray(objArray, 'food'); // => false
+//keyInObjectArray(objArray, 'animal'); // => false
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keyInObjectArray;
