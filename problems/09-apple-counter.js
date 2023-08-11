@@ -32,9 +32,7 @@ function appleCounter(appleObj) {
   // Your code here
   let count = 0;
   for (let key in appleObj) {
-    if (key.toLowerCase().includes('apple')) {
-      count ++
-    }
+    if (key.toLowerCase().includes('apple')) count ++
   }
  return count
 }
