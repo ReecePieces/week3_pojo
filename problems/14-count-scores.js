@@ -28,8 +28,43 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
 function countScores(people) {
-  // Your code here
+  let obj = {}
+  for (let person of people) {
+    let name = person.name
+    if (!obj[person.name]) obj[name] = person.score
+    else obj[name] += person.score
+
+  }
+  return obj
+
+
+  //   //object to store keys and values
+  //   let obj = {};
+  // //iterating through the objects in the arr
+  //   for (let i = 0; i < people.length; i++) {
+  //  //assigning the name and score to the values of the objects name and score values
+  //     let { name, score } = people[i]
+
+  //     if (obj[name] === undefined) {
+  //       obj[name] = score
+  //     }
+  //     else {
+  //       obj[name] += score
+  //     }
+  //   } return obj;
 }
+
+
+let peeps = [
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 }
+];
+console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
